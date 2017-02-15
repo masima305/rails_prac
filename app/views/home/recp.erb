@@ -2,28 +2,31 @@
 <div>
     <form action="/write" method="POST">
         First name:<br>
-        <input type="text" name="fir" placeholder = "placeholder"><br>
+        <input type="text" name="ing1" placeholder = "placeholder"><br>
         Last name:<br>
-        <input type="text" name="se"><br>
+        <input type="text" name="ing2"><br>
         First name:<br>
-        <input type="text" name="thir"><br>
+        <input type="text" name="ing3"><br>
         Last name:<br>
-        <input type="text" name="last"><br>
+        <input type="text" name="ing4"><br>
         <input type="submit" value="Submit">
     
     </form>
-    
-    
-    
 </div>
-<p><% @recip_list.each do |p| %></p>
-    <div>
-        <%= p.ing_1 %></br>
-        <%= p.ing_2 %></br>
-        <%= p.ing_3 %></br>
-        <%= p.ing_l %></br>
-        
-    </div>
-<% end %>
+
+<div>
+
+<% @recip_list.each do |p|%>
+    <%= p.ing_1 %><br>
+    <%= p.ing_2 %><br>
+    <%= p.ing_3 %><br>
+    <%= p.ing_l %><br>
+    <a href="/destroy/<%=p.id%>">[삭제]</a> <!--삭제할땐 꼭 id써주기-->
+<hr>    
+<%end%>
+</div>
+
+
+
 
 <a href="/home/index"><p>돌아가기</p></a>

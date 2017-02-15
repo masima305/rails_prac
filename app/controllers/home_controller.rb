@@ -9,10 +9,10 @@ class HomeController < ApplicationController
   end
   
   def write
-    @ing1 = params[:fir]
-    @ing2 = params[:se]
-    @ing3 = params[:thir]
-    @ing4 = params[:last]
+    @ing1 = params[:ing1]
+    @ing2 = params[:ing2]
+    @ing3 = params[:ing3]
+    @ing4 = params[:ing4]
     
     new_recip = Recip.new
     
@@ -29,8 +29,13 @@ class HomeController < ApplicationController
   
   def recp
     
-    @recip_list = Recip.all.order("id decs")
-    
+    @recip_list = Recip.all.order("id desc")
+  end
+  
+  def destroy
+    @one_recip = Recip.find(params[:id])
+    @one_recip.destroy
+    redirect_to "/home/recp"
   end
   
 end
