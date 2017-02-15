@@ -21,14 +21,10 @@ class HomeController < ApplicationController
     new_recip.ing_3 = @ing3
     new_recip.ing_l = @ing4
     new_recip.save
-     
     redirect_to "/home/recp"
-    
-    
   end
   
   def recp
-    
     @recip_list = Recip.all.order("id desc")
   end
   
@@ -38,4 +34,26 @@ class HomeController < ApplicationController
     redirect_to "/home/recp"
   end
   
+  def update_view
+    @one_recip = Recip.find(params[:id])
+  end
+  
+  def update_write
+    @one_recip = Recip.find(params[:id])
+
+    @ing1 = params[:ing1]
+    @ing2 = params[:ing2]
+    @ing3 = params[:ing3]
+    @ing4 = params[:ing4]
+    
+    
+    @one_recip.ing_1 = @ing1
+    @one_recip.ing_2 = @ing2
+    @one_recip.ing_3 = @ing3
+    @one_recip.ing_l = @ing4
+    @one_recip.save
+    redirect_to "/home/recp"
+
+    
+  end
 end

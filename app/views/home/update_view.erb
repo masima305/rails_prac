@@ -1,0 +1,16 @@
+여기는 수정하기 페이지 입니다.
+<div>
+    
+    <form action="/update_write/<%= @one_recip.id %>" method="POST">
+        First name:<br>
+        <input type="text" name="ing1" value="<%=@one_recip.ing_1 %>"><br>
+        Last name:<br>
+        <input type="text" name="ing2" value="<%=@one_recip.ing_2 %>"><br>
+        First name:<br>
+        <input type="text" name="ing3" value="<%=@one_recip.ing_3 %>"><br>
+        Last name:<br>
+        <input type="text" name="ing4" value="<%=@one_recip.ing_l %>"><br>
+        <input type="submit" value="Submit">
+    
+    </form>
+</div>
