@@ -13,12 +13,23 @@ class HomeController < ApplicationController
     @ing2 = params[:se]
     @ing3 = params[:thir]
     @ing4 = params[:last]
-    redirect_to "/recp"
     
-    new_recip = Recip.new_recip
+    new_recip = Recip.new
+    
+    new_recip.ing_1 = @ing1
+    new_recip.ing_2 = @ing2
+    new_recip.ing_3 = @ing3
+    new_recip.ing_l = @ing4
+    new_recip.save
+     
+    redirect_to "/home/recp"
+    
+    
   end
   
   def recp
+    
+    @recip_list = Recip.all.order("id decs")
     
   end
   

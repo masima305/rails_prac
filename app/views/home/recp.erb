@@ -12,7 +12,18 @@
         <input type="submit" value="Submit">
     
     </form>
+    
+    
+    
 </div>
-
+<p><% @recip_list.each do |p| %></p>
+    <div>
+        <%= p.ing_1 %></br>
+        <%= p.ing_2 %></br>
+        <%= p.ing_3 %></br>
+        <%= p.ing_l %></br>
+        
+    </div>
+<% end %>
 
 <a href="/home/index"><p>돌아가기</p></a>

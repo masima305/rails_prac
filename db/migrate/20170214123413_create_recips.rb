@@ -2,10 +2,10 @@ class CreateRecips < ActiveRecord::Migration
   def change
     create_table :recips do |t|
       
-      t.string "1_ing"
-      t.string "2_ing"
-      t.string "3_ing"
-      t.string "l_ing"
+      t.string "ing_1"
+      t.string "ing_2"
+      t.string "ing_3"
+      t.string "ing_l"
 
       t.timestamps null: false
     end
