@@ -23,6 +23,23 @@
     <%= p.ing_l %><br>
     <a href="/destroy/<%=p.id%>">[삭제]</a> <!--삭제할땐 꼭 id써주기-->
     <a href="/update_view/<%=p.id%>">[수정]</a> <!--수정용 view-->
+    
+    <form action="/reple" method="POST">
+        <input type="hidden" name=recipId value="<%= p.id %>"> <!--p번 글에 대한 리플임을 값으로 넘김.-->
+        name:<br>
+        <input type="text" name="name"><br>
+        contents:<br>
+        <input type="text" name="contents"><br>
+        <input type="submit" value="Submit">
+    </form>
+  
+    <p>리플목록</p>
+    <% p.reples.each do |q| %>
+    <p>이름 : <%= q.name %></p>
+    <p><%= q.contents %></p>
+    <%end%>
+    
+  
 <hr>    
 <%end%>
 </div>

@@ -56,4 +56,13 @@ class HomeController < ApplicationController
 
     
   end
+  
+  def reple
+    new_reple = Reple.new
+    new_reple.name = params[:name]
+    new_reple.contents = params[:contents]
+    new_reple.recip_id = params[:recipId]
+    new_reple.save
+    redirect_to "/home/recp"
+  end
 end

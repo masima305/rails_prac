@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170214123413) do
+ActiveRecord::Schema.define(version: 20170216051507) do
 
   create_table "recips", force: :cascade do |t|
     t.string   "ing_1"
     t.string   "ing_2"
     t.string   "ing_3"
     t.string   "ing_l"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reples", force: :cascade do |t|
+    t.string   "name"
+    t.string   "contents"
+    t.integer  "recip_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

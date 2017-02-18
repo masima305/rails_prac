@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/destroy/:id' => 'home#destroy'
   get '/update_view/:id' => 'home#update_view'
   post '/update_write/:id' => 'home#update_write'
+  post '/reple' => 'home#reple'
   
   # get은 주소란.    #여기는 컨트롤러와 데프로 연결.
   # get으로 주소를 받으면 다음의 컨트롤러로 연결해준다.
